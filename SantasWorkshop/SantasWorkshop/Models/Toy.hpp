@@ -30,7 +30,7 @@ public:
     
     
     const std::string& getName() const { return m_name; }
-    int getId() { return m_id; }
+    int getId() const { return m_id; }
     int getManufacturingTime() const { return m_manufacturingTimeInDays; }
 };
 
