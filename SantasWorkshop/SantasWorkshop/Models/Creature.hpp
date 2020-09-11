@@ -27,10 +27,18 @@ public:
     {
     }
     
-    virtual const std::string& getName() const = 0; // pure virtual function (makes class abstract)
-    virtual int getAge() const = 0;                 // pure virtual function
+    // virtual destructor (needed for the compiler to be able to call any derived classes destructor)
+    virtual ~Creature()
+    {
+    }
     
     
+    const std::string& getName() const { return m_name; }
+    int getAge() const { return m_age; }
+    
+    virtual void printObject(std::ostream &out) const = 0; // pure virtual function (makes class abstract)
+        
+    friend std::ostream& operator<<(std::ostream &out, const Creature &creature);
 };
 
 
