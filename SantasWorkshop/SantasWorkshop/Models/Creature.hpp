@@ -17,7 +17,7 @@ namespace santas_workshop {
 // Abstract base class
 class Creature
 {
-private:
+protected:
     std::string m_name;
     int m_age;
     
