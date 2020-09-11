@@ -9,7 +9,21 @@
 #include "Santa.hpp"
 #include "Creature.hpp"
 
+#include <iostream>
+
 namespace santas_workshop {
 
+void Santa::printObject(std::ostream &out) const
+{
+    out << m_name << " is " << m_age << " years old!\n";
+}
+
+
+
+std::ostream& operator<<(std::ostream &out, const Santa &santa)
+{
+    santa.printObject(out);
+    return out;
+}
 
 }

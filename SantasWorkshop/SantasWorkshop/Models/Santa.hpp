@@ -11,11 +11,12 @@
 
 #include "Creature.hpp"
 #include <stdio.h>
-
+#include <string>
 
 namespace santas_workshop {
 
 
+// Maybe singleton (Only One santa??)
 class Santa : public Creature
 {
 private:
@@ -27,7 +28,9 @@ public:
     {
     }
     
-    
+    virtual void printObject(std::ostream &out) const override;
+        
+    friend std::ostream& operator<<(std::ostream &out, const Santa &santa);
     
 };
 
