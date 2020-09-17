@@ -28,9 +28,9 @@ public:
     {
     }
     
-    virtual void printObject(std::ostream &out) const override;
+    virtual std::ostream& print(std::ostream &out) const override;
         
-    friend std::ostream& operator<<(std::ostream &out, const Santa &santa);
+    //friend std::ostream& operator<<(std::ostream &out, const Santa &santa);
     
 };
 
