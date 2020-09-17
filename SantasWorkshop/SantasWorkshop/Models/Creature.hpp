@@ -14,6 +14,8 @@
 
 namespace santas_workshop {
 
+// TODO: Refactor to composition (personalDetails) instead??
+
 // Abstract base class
 class Creature
 {
@@ -36,7 +38,7 @@ public:
     const std::string& getName() const { return m_name; }
     int getAge() const { return m_age; }
     
-    virtual void printObject(std::ostream &out) const = 0; // pure virtual function (makes class abstract)
+    virtual std::ostream& print(std::ostream &out) const = 0; // pure virtual function (makes class abstract)
         
     friend std::ostream& operator<<(std::ostream &out, const Creature &creature);
 };

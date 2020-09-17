@@ -7,6 +7,7 @@
 //
 
 #include "Creature.hpp"
+#include <iostream>
 
 namespace santas_workshop {
 
@@ -14,9 +15,16 @@ namespace santas_workshop {
 // note can't be made virtual (to circumnavigate this it calls another method)
 std::ostream& operator<<(std::ostream &out, const Creature &creature)
 {
-    creature.printObject(out);
+    return creature.print(out);
+}
+
+
+std::ostream& Creature::print(std::ostream &out) const
+{
+    out << "Creature";
     return out;
 }
+
 
     
 }
