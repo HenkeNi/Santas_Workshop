@@ -14,12 +14,15 @@
 
 namespace santas_workshop {
 
+// TODO: make interface instead???
+
+// Abstract class
 class Toy
 {
-private:
-    std::string m_name;
-    int m_manufacturingTimeInDays;
-    int m_id;
+protected:
+    std::string m_name{};
+    int m_manufacturingTimeInDays{};
+    int m_id{};
     static int s_idGenerator;
     
 public:
@@ -28,10 +31,14 @@ public:
     {
     }
     
+    virtual ~Toy() {}
     
+    int getManufacturingTime() const { return m_manufacturingTimeInDays; }
     const std::string& getName() const { return m_name; }
     int getId() const { return m_id; }
-    int getManufacturingTime() const { return m_manufacturingTimeInDays; }
+    
+    virtual std::ostream& print(std::ostream &out) const = 0;
+    friend std::ostream& operator<<(std::ostream &out, const Toy &toy);
 };
 
 }

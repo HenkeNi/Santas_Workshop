@@ -7,9 +7,25 @@
 //
 
 #include "Toy.hpp"
+#include <iostream>
 
 namespace santas_workshop {
 
 int Toy::s_idGenerator{ 1 };
+
+//std::ostream& Toy::print(std::ostream &out) const
+//{
+//    out << "Toy";
+//    return out;
+//}
+
+std::ostream& operator<<(std::ostream &out, const Toy &toy)
+{
+    return toy.print(out);
+}
+
+
+
+
 
 }
